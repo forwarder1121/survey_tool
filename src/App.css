@@ -1,0 +1,67 @@
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align:center;
+  line-height: 60px;
+  color: rgb(120, 120, 120);
+  border: 1px solid rgb(230, 230, 230);
+}
+
+.layout {
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.menu-wrapper {
+  height: 100%;
+  position: absolute;
+  width: 25%;
+  border: 1px solid rgb(230, 230, 230);
+}
+.menu {
+  display: block;
+  height: 100%;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menu li {
+  display: block;
+  height: 25px;
+  padding: 8px;
+  cursor: pointer;
+  color: rgb(143, 143, 143);
+  text-decoration: none;
+}
+.menu a:hover {
+  color: #000;
+}
+.menu ul li:hover, .menu > label:hover {
+  background-color: rgba(206, 205, 205, 0.74);
+  color: #000;
+  border-radius: 10px;
+}
+.menu div {
+  line-height: 1.5;
+  font-size: 1em;
+  font-family: 'Noto Sans KR';
+  padding: 0 0 0 50px; /* 아이콘과 텍스트 사이 여백 */
+}
+.workspaces {
+  margin: 15px 20px;
+  font-size: 20px;
+  color: rgb(120, 120, 120);
+}
+
+.lowerButtons{
+  float:right;
+  margin:10px;
+}
