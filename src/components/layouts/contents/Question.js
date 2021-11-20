@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import AssayType from "./questions/AssayType";
 import BarType from "./questions/BarType";
 import BlockType from "./questions/BlockType";
@@ -10,17 +10,18 @@ import AgeType from "./questions/AgeType";
 import Title from "./questions/Title";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import NextButton from "./buttons/NextButton";
+import PreviousButton from "./buttons/PreviousButton";
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 
 
-class Question extends Component{
+const Question = props => {
+   
+    const{titleOfQuestion,type}=props;
     
-    render(){
-        const{titleOfQuestion,type}=this.props;
+   
+       
         
         if(type==="assayType"){
             return(
@@ -31,12 +32,8 @@ class Question extends Component{
                     </CardContent>
                     <Divider />
                     <Stack spacing={2} direction="row" className="lowerButtons">
-                        <Button variant="outlined" endIcon={<ArrowBackIcon />}>
-                        이전
-                        </Button>
-                        <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-                        다음
-                        </Button>
+                        <PreviousButton/>
+                        <NextButton/>
                     </Stack>
                    
                 </Card>
@@ -51,12 +48,8 @@ class Question extends Component{
                     </CardContent>
                     <Divider />
                     <Stack spacing={2} direction="row" className="lowerButtons">
-                        <Button variant="outlined" endIcon={<ArrowBackIcon />}>
-                        이전
-                        </Button>
-                        <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-                        다음
-                        </Button>
+                    <PreviousButton/>
+                        <NextButton/>
                     </Stack>
                 </Card>
             )
@@ -71,12 +64,8 @@ class Question extends Component{
                     </CardContent>
                     <Divider />
                     <Stack spacing={2} direction="row" className="lowerButtons">
-                        <Button variant="outlined" endIcon={<ArrowBackIcon />}>
-                        이전
-                        </Button>
-                        <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-                        다음
-                        </Button>
+                    <PreviousButton/>
+                        <NextButton/>
                     </Stack>
                 </Card>
             )
@@ -91,12 +80,8 @@ class Question extends Component{
                     </CardContent>
                     <Divider />
                     <Stack spacing={2} direction="row" className="lowerButtons">
-                        <Button variant="outlined" endIcon={<ArrowBackIcon />}>
-                        이전
-                        </Button>
-                        <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-                        다음
-                        </Button>
+                    <PreviousButton/>
+                        <NextButton/>
                     </Stack>
                 </Card>
             )
@@ -111,12 +96,8 @@ class Question extends Component{
                     </CardContent>
                     <Divider />
                     <Stack spacing={2} direction="row" className="lowerButtons">
-                        <Button variant="outlined" endIcon={<ArrowBackIcon />}>
-                        이전
-                        </Button>
-                        <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-                        다음
-                        </Button>
+                    <PreviousButton/>
+                        <NextButton/>
                     </Stack>
                 </Card>
             )
@@ -131,12 +112,8 @@ class Question extends Component{
                     </CardContent>
                     <Divider />
                     <Stack spacing={2} direction="row" className="lowerButtons">
-                        <Button variant="outlined" endIcon={<ArrowBackIcon />}>
-                        이전
-                        </Button>
-                        <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-                        다음
-                        </Button>
+                    <PreviousButton/>
+                        <NextButton/>
                     </Stack>
                 </Card>
             )
@@ -150,12 +127,8 @@ class Question extends Component{
                     </CardContent>
                     <Divider />
                     <Stack spacing={2} direction="row" className="lowerButtons">
-                        <Button variant="outlined" endIcon={<ArrowBackIcon />}>
-                        이전
-                        </Button>
-                        <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-                        다음
-                        </Button>
+                    <PreviousButton/>
+                        <NextButton/>
                     </Stack>
                 </Card>
             )
@@ -170,17 +143,13 @@ class Question extends Component{
                     </CardContent>
                     <Divider />
                     <Stack spacing={2} direction="row" className="lowerButtons">
-                        <Button variant="outlined" endIcon={<ArrowBackIcon />}>
-                        이전
-                        </Button>
-                        <Button variant="outlined" endIcon={<ArrowForwardIcon />}>
-                        다음
-                        </Button>
+                    <PreviousButton/>
+                        <NextButton/>
                     </Stack>
                 </Card>
             )
         }
-    }
+    
   }
 
   export default Question;

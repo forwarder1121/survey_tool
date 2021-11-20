@@ -5,7 +5,7 @@ import Question from "./contents/Question";
 
 
 
-function Content() {
+const Content=()=> {
 
     return (
         <Container>  
