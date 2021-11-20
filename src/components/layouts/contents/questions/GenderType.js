@@ -1,17 +1,14 @@
+import React, { Component } from "react";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormLabel from "@mui/material/FormLabel";
 
-import React,{Component} from "react";
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-
-
-class GenderType extends Component{
-
-  render(){
-      return(
-        <FormControl component="fieldset">
+class GenderType extends Component {
+  render() {
+    return (
+      <FormControl component="fieldset">
         <FormLabel component="legend">Gender</FormLabel>
         <RadioGroup
           aria-label="gender"
@@ -23,7 +20,7 @@ class GenderType extends Component{
           <FormControlLabel value="other" control={<Radio />} label="Other" />
         </RadioGroup>
       </FormControl>
-      );
+    );
   }
 }
 
