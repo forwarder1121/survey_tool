@@ -1,18 +1,17 @@
-import React,{Component} from "react";
-import Checkbox from '@material-ui/core/Checkbox';
+import React, { Component } from "react";
+import Checkbox from "@material-ui/core/Checkbox";
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
-class LawAgreeType extends Component{
-
-  render(){
-      return(
-        <div>
-      법적인 내용 .....동의하십니까?
-      <br></br>
-      <Checkbox {...label} defaultChecked />
-    </div>
-      );
+class LawAgreeType extends Component {
+  render() {
+    return (
+      <div>
+        법적인 내용 .....동의하십니까?
+        <br></br>
+        <Checkbox {...label} defaultChecked />
+      </div>
+    );
   }
 }
 
