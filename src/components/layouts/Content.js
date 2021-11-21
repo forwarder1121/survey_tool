@@ -5,7 +5,7 @@ import Question from "./contents/Question";
 const Content = () => {
   return (
     <Container>
-      <Question titleOfQuestion="질문2번(바형식)" type="barType" />
+      <Question titleOfQuestion="마무리asdfsadfasdfsadf" type="barType" />
       <Question titleOfQuestion="질문3번(블록형식)" type="blockType" />
       <Question titleOfQuestion="테스트[젠더]" type="genderType" />
       <Question titleOfQuestion="테스트[법적]" type="lawAgreeType" />
