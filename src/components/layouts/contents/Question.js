@@ -8,6 +8,7 @@ import StarType from "./questions/StarType";
 import YesNoType from "./questions/YesNoType";
 import AgeType from "./questions/AgeType";
 import NoticeType from "./questions/NoticeType";
+import UploadType from "./questions/UploadType";
 import Title from "./questions/Title";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -151,6 +152,22 @@ const Question = props => {
         <CardContent>
           <Title title={title} />
           <NoticeType />
+        </CardContent>
+        <Divider />
+        <Stack spacing={2} direction="row" className="lowerButtons">
+          <PreviousButton />
+          <NextButton />
+        </Stack>
+      </Card>
+    );
+  }
+
+  if (type === "uploadType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <UploadType />
         </CardContent>
         <Divider />
         <Stack spacing={2} direction="row" className="lowerButtons">

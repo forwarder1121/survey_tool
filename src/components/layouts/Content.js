@@ -15,6 +15,7 @@ const Content = () => {
     5: { id: "5", type: "starType", title: "별점형식" },
     6: { id: "6", type: "yesNoType", title: "동의거부형식" },
     7: { id: "7", type: "ageType", title: "나이형식" },
+    8: { id: "8", type: "uploadType", title: "업로드형식" },
   });
   return (
     <Container>
