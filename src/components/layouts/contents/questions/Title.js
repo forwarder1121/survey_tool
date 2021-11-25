@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Typography from "@mui/material/Typography";
 class Title extends Component {
   render() {
-    const { titleOfQuestion } = this.props;
+    const { title } = this.props;
 
-    return <Typography variant="h5">{titleOfQuestion}</Typography>;
+    return <Typography variant="h5">{title}</Typography>;
   }
 }
 

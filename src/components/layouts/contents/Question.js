@@ -16,13 +16,13 @@ import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 
 const Question = props => {
-  const { titleOfQuestion, type } = props;
+  const { title, type } = props;
 
   if (type === "assayType") {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <AssayType />
         </CardContent>
         <Divider />
@@ -37,7 +37,7 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <BarType />
         </CardContent>
         <Divider />
@@ -53,7 +53,7 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <BlockType />
         </CardContent>
         <Divider />
@@ -69,7 +69,7 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <GenderType />
         </CardContent>
         <Divider />
@@ -85,7 +85,7 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <LawAgreeType />
         </CardContent>
         <Divider />
@@ -101,7 +101,7 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <StarType />
         </CardContent>
         <Divider />
@@ -116,7 +116,7 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <YesNoType />
         </CardContent>
         <Divider />
@@ -132,7 +132,7 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <AgeType />
         </CardContent>
         <Divider />

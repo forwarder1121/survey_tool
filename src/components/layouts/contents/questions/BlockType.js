@@ -5,25 +5,34 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
+import { useState } from "react";
 
 const BlockType = () => {
-  const _onClick = () => alert("추가 버튼이 눌렸습니다.");
+  //choices는 blocktype에서 사용될 모든 선지에 대한 정보를 나타냅니다.
+
+  const [choices, setChoices] = useState({
+    1: { id: "1", title: "1번 선지", subtitle: "1번 선지 설명" },
+  });
+  const _addChoice = () => {
+    const ID = Object.keys(choices).length + 1;
+    const newChoiceObject = {
+      [ID]: {
+        id: ID,
+        title: ID + "번 선지",
+        subtitle: ID + "번 선지 설명",
+      },
+    };
+    setChoices({ ...choices, ...newChoiceObject });
+  };
   return (
     <Grid container spacing={2}>
+      {Object.values(choices).map(item => (
+        <Grid item>
+          <Block title={item.title} subtitle={item.subtitle} />
+        </Grid>
+      ))}
       <Grid item>
-        <Block title="1번선지" subtitle="1번선지에 대한 설명" />
-      </Grid>
-      <Grid item>
-        <Block title="2번선지" subtitle="2번선지에 대한 설명" />
-      </Grid>
-      <Grid item>
-        <Block title="3번선지" subtitle="3번선지에 대한 설명" />
-      </Grid>
-      <Grid item>
-        <Block title="4번선지" subtitle="4번선지에 대한 설명" />
-      </Grid>
-      <Grid item>
-        <AddBlock onClick={_onClick} />
+        <AddBlock onClick={_addChoice} />
       </Grid>
     </Grid>
   );
