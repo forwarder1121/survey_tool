@@ -7,6 +7,7 @@ const Content = () => {
   //questions은 사용할 모든 문항에 대한 정보를 가져야합니다.
   //ps. blocktype은 따로 구현필요함
   const [questions, setQuestions] = useState({
+    0: { id: "0", type: "noticeType", title: "공지형식" },
     1: { id: "1", type: "barType", title: "바형식" },
     2: { id: "2", type: "blockType", title: "블록형식" },
     3: { id: "3", type: "genderType", title: "젠더형식" },

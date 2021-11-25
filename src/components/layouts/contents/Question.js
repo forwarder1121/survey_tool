@@ -7,6 +7,7 @@ import LawAgreeType from "./questions/LawAgreeType";
 import StarType from "./questions/StarType";
 import YesNoType from "./questions/YesNoType";
 import AgeType from "./questions/AgeType";
+import NoticeType from "./questions/NoticeType";
 import Title from "./questions/Title";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -134,6 +135,22 @@ const Question = props => {
         <CardContent>
           <Title title={title} />
           <AgeType />
+        </CardContent>
+        <Divider />
+        <Stack spacing={2} direction="row" className="lowerButtons">
+          <PreviousButton />
+          <NextButton />
+        </Stack>
+      </Card>
+    );
+  }
+
+  if (type === "noticeType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <NoticeType />
         </CardContent>
         <Divider />
         <Stack spacing={2} direction="row" className="lowerButtons">
