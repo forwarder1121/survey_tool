@@ -18,7 +18,7 @@ const Content = () => {
   return (
     <Container>
       {Object.values(questions).map(item => (
-        <Question type={item.type} title={item.title} />
+        <Question key={item.id} type={item.type} title={item.title} />
       ))}
     </Container>
   );
