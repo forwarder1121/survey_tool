@@ -28,10 +28,9 @@ const Question = props => {
           <AssayType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <CardContent>
+          <ButtonArea />
+        </CardContent>
       </Card>
     );
   }
@@ -43,10 +42,7 @@ const Question = props => {
           <BarType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -59,10 +55,7 @@ const Question = props => {
           <BlockType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -75,10 +68,7 @@ const Question = props => {
           <GenderType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -91,10 +81,7 @@ const Question = props => {
           <LawAgreeType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -107,10 +94,7 @@ const Question = props => {
           <StarType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -122,10 +106,7 @@ const Question = props => {
           <YesNoType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -138,10 +119,7 @@ const Question = props => {
           <AgeType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -154,10 +132,7 @@ const Question = props => {
           <NoticeType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -170,13 +145,19 @@ const Question = props => {
           <UploadType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
+};
+
+const ButtonArea = () => {
+  return (
+    <Stack spacing={2} direction="row" className="lowerButtons">
+      <PreviousButton />
+      <NextButton />
+    </Stack>
+  );
 };
 
 export default Question;

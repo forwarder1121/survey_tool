@@ -5,7 +5,7 @@ import Question from "./contents/Question";
 
 const Content = () => {
   //questions은 사용할 모든 문항에 대한 정보를 가져야합니다.
-  //ps. blocktype은 따로 구현필요함
+  //ps. blocktype은 따로 구현필요함, value값을 받아오는것도 구현해야함
   const [questions, setQuestions] = useState({
     0: { id: "0", type: "noticeType", title: "공지형식" },
     1: { id: "1", type: "barType", title: "바형식" },
@@ -17,8 +17,10 @@ const Content = () => {
     7: { id: "7", type: "ageType", title: "나이형식" },
     8: { id: "8", type: "uploadType", title: "업로드형식" },
   });
+
   return (
     <Container>
+      {numberOfTotalQuestons}
       {Object.values(questions).map(item => (
         <Question key={item.id} type={item.type} title={item.title} />
       ))}
