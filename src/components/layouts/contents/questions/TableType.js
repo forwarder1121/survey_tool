@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
+import { StyleSheet } from "@emotion/utils";
 import CardContent from "@mui/material/CardContent";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
@@ -37,17 +38,17 @@ const TableType = () => {
     setRowInfo({ ...rowInfo, ...newRowObject });
   };
   return (
-    <React.Fragment>
-      <Card>
-        <Grid container spacing={2}>
-          {Object.values(colInfo).map(item => (
-            <Grid item key={item.id}>
-              <Block id={item.id} title={item.title} />
-            </Grid>
-          ))}
+    <Card>
+      <Grid container spacing={2}>
+        {Object.values(colInfo).map(item => (
+          <Grid item key={item.id} xs={1}>
+            <Block id={item.id} title={item.title} />
+          </Grid>
+        ))}
+        <Grid item xs={1}>
           <AddBlock onClick={_addCol} />
         </Grid>
-      </Card>
+      </Grid>
 
       {Object.values(rowInfo).map(item => (
         <RowComponent
@@ -56,7 +57,7 @@ const TableType = () => {
         />
       ))}
       <AddBlock onClick={_addRow} />
-    </React.Fragment>
+    </Card>
   );
 };
 
@@ -71,7 +72,7 @@ const RowComponent = ({ titleOfRow, col }) => {
     for (let i = 1; i < col; i++) {
       //만약 i==selectedOption이라면 background:green
       result.push(
-        <Grid item key={i}>
+        <Grid item key={i} xs={1}>
           <Block
             title={i + "번"}
             selectOption={_selectOption}
@@ -86,7 +87,7 @@ const RowComponent = ({ titleOfRow, col }) => {
   return (
     <Card>
       <Grid container spacing={2}>
-        <Grid item>
+        <Grid item xs={1}>
           <Block title={titleOfRow} />
         </Grid>
         {renderOption()}
@@ -96,14 +97,23 @@ const RowComponent = ({ titleOfRow, col }) => {
 };
 
 const Block = ({ title, selectOption, num, isSelected }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const _onClick = () => {
     selectOption(num);
   };
+  const _handleMouseHover = () => {
+    setIsHovered(!isHovered);
+  };
+  
   return (
     <Card
-      sx={{ maxWidth: 250 }}
+      sx={1}
       onClick={_onClick}
-      style={{ background: isSelected ? "green" : "none" }}
+      onMouseEnter={_handleMouseHover}
+      onMouseLeave={_handleMouseHover}
+      style={
+        ({ background: isSelected ? "green" : "none" })
+      }
     >
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -117,7 +127,7 @@ const Block = ({ title, selectOption, num, isSelected }) => {
 //Block 선지를 추가하는 컴포넌트
 const AddBlock = props => {
   return (
-    <Card sx={{ maxWidth: 250 }}>
+    <Card sx={1}>
       <CardActions>
         <Button size="small" onClick={props.onClick}>
           추가

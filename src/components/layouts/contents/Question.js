@@ -8,8 +8,10 @@ import StarType from "./questions/StarType";
 import YesNoType from "./questions/YesNoType";
 import AgeType from "./questions/AgeType";
 import NoticeType from "./questions/NoticeType";
+import PhoneType from "./questions/PhoneType";
 import UploadType from "./questions/UploadType";
 import TableType from "./questions/TableType";
+import DropType from "./questions/DropType";
 import Title from "./questions/Title";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -156,6 +158,30 @@ const Question = props => {
         <CardContent>
           <Title title={title} />
           <TableType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+   if (type === "dropType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <DropType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+  if (type === "phoneType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <PhoneType />
         </CardContent>
         <Divider />
         <ButtonArea />
