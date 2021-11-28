@@ -9,6 +9,7 @@ import YesNoType from "./questions/YesNoType";
 import AgeType from "./questions/AgeType";
 import NoticeType from "./questions/NoticeType";
 import UploadType from "./questions/UploadType";
+import TableType from "./questions/TableType";
 import Title from "./questions/Title";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -143,6 +144,18 @@ const Question = props => {
         <CardContent>
           <Title title={title} />
           <UploadType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+  if (type === "tableType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <TableType />
         </CardContent>
         <Divider />
         <ButtonArea />
