@@ -7,6 +7,11 @@ import LawAgreeType from "./questions/LawAgreeType";
 import StarType from "./questions/StarType";
 import YesNoType from "./questions/YesNoType";
 import AgeType from "./questions/AgeType";
+import NoticeType from "./questions/NoticeType";
+import PhoneType from "./questions/PhoneType";
+import UploadType from "./questions/UploadType";
+import TableType from "./questions/TableType";
+import DropType from "./questions/DropType";
 import Title from "./questions/Title";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -16,20 +21,19 @@ import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 
 const Question = props => {
-  const { titleOfQuestion, type } = props;
+  const { title, type } = props;
 
   if (type === "assayType") {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <AssayType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <CardContent>
+          <ButtonArea />
+        </CardContent>
       </Card>
     );
   }
@@ -37,14 +41,11 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <BarType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -53,14 +54,11 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <BlockType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -69,14 +67,11 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <GenderType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -85,14 +80,11 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <LawAgreeType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -101,14 +93,11 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <StarType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -116,14 +105,11 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <YesNoType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
@@ -132,17 +118,85 @@ const Question = props => {
     return (
       <Card variant="outlined">
         <CardContent>
-          <Title titleOfQuestion={titleOfQuestion} />
+          <Title title={title} />
           <AgeType />
         </CardContent>
         <Divider />
-        <Stack spacing={2} direction="row" className="lowerButtons">
-          <PreviousButton />
-          <NextButton />
-        </Stack>
+        <ButtonArea />
       </Card>
     );
   }
+
+  if (type === "noticeType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <NoticeType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+
+  if (type === "uploadType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <UploadType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+  if (type === "tableType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <TableType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+   if (type === "dropType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <DropType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+  if (type === "phoneType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <PhoneType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+};
+
+const ButtonArea = () => {
+  return (
+    <Stack spacing={2} direction="row" className="lowerButtons">
+      <PreviousButton />
+      <NextButton />
+    </Stack>
+  );
 };
 
 export default Question;
