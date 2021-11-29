@@ -4,6 +4,7 @@ import BarType from "./questions/BarType";
 import BlockType from "./questions/BlockType";
 import GenderType from "./questions/GenderType";
 import LawAgreeType from "./questions/LawAgreeType";
+import LawAgreeYNType from "./questions/LawAgreeYNType";
 import StarType from "./questions/StarType";
 import YesNoType from "./questions/YesNoType";
 import AgeType from "./questions/AgeType";
@@ -164,7 +165,7 @@ const Question = props => {
       </Card>
     );
   }
-   if (type === "dropType") {
+  if (type === "dropType") {
     return (
       <Card variant="outlined">
         <CardContent>
@@ -182,6 +183,19 @@ const Question = props => {
         <CardContent>
           <Title title={title} />
           <PhoneType />
+        </CardContent>
+        <Divider />
+        <ButtonArea />
+      </Card>
+    );
+  }
+
+  if (type === "lawAgreeYNType") {
+    return (
+      <Card variant="outlined">
+        <CardContent>
+          <Title title={title} />
+          <LawAgreeYNType />
         </CardContent>
         <Divider />
         <ButtonArea />

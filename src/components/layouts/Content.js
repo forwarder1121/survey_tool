@@ -20,7 +20,8 @@ const Content = () => {
     8: { id: "8", type: "uploadType", title: "업로드형식" },
     9: { id: "9", type: "tableType", title: "격자형식" },
     10: { id: "10", type: "dropType", title: "드롭다운형식" },
-     11: { id: "11", type: "phoneType", title: "전화번호형식" },
+    11: { id: "11", type: "phoneType", title: "전화번호형식" },
+    12: { id: "12", type: "lawAgreeYNType", title: "거부불가형식" },
   });
 
   return (
