@@ -1,9 +1,10 @@
-import "../../App.css";
 import { useState } from "react";
 import { Container } from "@material-ui/core";
 import Question from "./contents/Question";
 
-const Content = () => {
+import { Grid } from "@material-ui/core";
+
+function Content() {
   //questions은 사용할 모든 문항에 대한 정보를 가져야합니다.
   //ps. blocktype은 따로 구현필요함, value값을 받아오는것도 구현해야함
 
@@ -25,11 +26,15 @@ const Content = () => {
   });
 
   return (
-    <Container>
-      {Object.values(questions).map(item => (
-        <Question key={item.id} type={item.type} title={item.title} />
-      ))}
-    </Container>
+    <div>
+      <Grid container spacing={1}>
+        <Container>
+          {Object.values(questions).map(item => (
+            <Question key={item.id} type={item.type} title={item.title} />
+          ))}
+        </Container>
+      </Grid>
+    </div>
   );
-};
+}
 export default Content;
