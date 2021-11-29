@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { styled } from "@mui/material/styles";
-import { StyleSheet } from "@emotion/utils";
+
 import CardContent from "@mui/material/CardContent";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
@@ -56,7 +55,13 @@ const TableType = () => {
           col={Object.keys(colInfo).length}
         />
       ))}
-      <AddBlock onClick={_addRow} />
+      <Card>
+        <Grid container spacing={2}>
+          <Grid item xs={1}>
+            <AddBlock onClick={_addRow} />
+          </Grid>
+        </Grid>
+      </Card>
     </Card>
   );
 };
@@ -104,16 +109,14 @@ const Block = ({ title, selectOption, num, isSelected }) => {
   const _handleMouseHover = () => {
     setIsHovered(!isHovered);
   };
-  
+
   return (
     <Card
       sx={1}
       onClick={_onClick}
       onMouseEnter={_handleMouseHover}
       onMouseLeave={_handleMouseHover}
-      style={
-        ({ background: isSelected ? "green" : "none" })
-      }
+      style={{ background: isSelected ? "green" : "none" }}
     >
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
