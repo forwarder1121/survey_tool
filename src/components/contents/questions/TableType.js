@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import CardContent from "@mui/material/CardContent";
 import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
@@ -13,7 +12,7 @@ const TableType = () => {
     1: { id: "1", title: "col1" },
   });
   const [rowInfo, setRowInfo] = useState({
-    0: { id: "0", title: "row0" },
+    0: { id: "1", title: "문제0" },
   });
 
   const _addCol = () => {
@@ -31,7 +30,7 @@ const TableType = () => {
     const newRowObject = {
       [ID]: {
         id: ID,
-        title: "row" + ID,
+        title: "문제" + ID,
       },
     };
     setRowInfo({ ...rowInfo, ...newRowObject });
@@ -40,17 +39,18 @@ const TableType = () => {
     <Card>
       <Grid container spacing={2}>
         {Object.values(colInfo).map(item => (
-          <Grid item key={item.id} xs={1}>
+          <Grid item key={item.id} xs={2}>
             <Block id={item.id} title={item.title} />
+            <Button style={{ width: 170, background: "#c1c423" }} />
           </Grid>
         ))}
         <Grid item xs={1}>
           <AddBlock onClick={_addCol} />
         </Grid>
       </Grid>
-
       {Object.values(rowInfo).map(item => (
         <RowComponent
+          key={item.id}
           titleOfRow={item.title}
           col={Object.keys(colInfo).length}
         />
@@ -72,12 +72,13 @@ const RowComponent = ({ titleOfRow, col }) => {
   const _selectOption = num => {
     setSelectedOption(num);
   };
+
   const renderOption = () => {
     const result = [];
     for (let i = 1; i < col; i++) {
-      //만약 i==selectedOption이라면 background:green
+      //만약 i==selectedOption이라면 background:red
       result.push(
-        <Grid item key={i} xs={1}>
+        <Grid item key={i} xs={2}>
           <Block
             title={i + "번"}
             selectOption={_selectOption}
@@ -92,8 +93,9 @@ const RowComponent = ({ titleOfRow, col }) => {
   return (
     <Card>
       <Grid container spacing={2}>
-        <Grid item xs={1}>
+        <Grid item xs={2}>
           <Block title={titleOfRow} />
+          <Button style={{ width: 170, background: "#c1c423" }} />
         </Grid>
         {renderOption()}
       </Grid>
@@ -112,11 +114,11 @@ const Block = ({ title, selectOption, num, isSelected }) => {
 
   return (
     <Card
-      sx={1}
+      xs={1}
       onClick={_onClick}
       onMouseEnter={_handleMouseHover}
       onMouseLeave={_handleMouseHover}
-      style={{ background: isSelected ? "green" : "none" }}
+      style={{ background: isSelected ? "#21da3f" : "none" }}
     >
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -130,7 +132,7 @@ const Block = ({ title, selectOption, num, isSelected }) => {
 //Block 선지를 추가하는 컴포넌트
 const AddBlock = props => {
   return (
-    <Card sx={1}>
+    <Card xs={1}>
       <CardActions>
         <Button size="small" onClick={props.onClick}>
           추가

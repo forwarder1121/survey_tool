@@ -12,10 +12,9 @@ const LawAgreeYNType = () => {
   const _noButtonClick = () => {
     setIsYesClicked(false);
     setIsClicked(true);
-  };
-  const _lawalert = () => {
     alert("법적 내용에 대해 동의하셔야 다음이 진행됩니다.");
   };
+
   if (isClicked === "false") {
     return (
       <div>
@@ -29,11 +28,7 @@ const LawAgreeYNType = () => {
             </Button>
           </Grid>
           <Grid item>
-            <Button
-              variant="contained"
-              onClick={_noButtonClick}
-              onClick={_lawalert}
-            >
+            <Button variant="contained" onClick={_noButtonClick}>
               아니요
             </Button>
           </Grid>
@@ -60,7 +55,6 @@ const LawAgreeYNType = () => {
             <Button
               variant="contained"
               onClick={_noButtonClick}
-              onClick={_lawalert}
               style={{ background: isYesClicked ? "none" : "#c1c423" }}
             >
               아니요
